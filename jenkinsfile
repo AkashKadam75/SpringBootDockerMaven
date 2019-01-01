@@ -8,7 +8,7 @@ pipeline {
                            steps {
                                
                                withMaven(maven : 'MAVEN_3_5') {
-                             		sh 'mvn clean install'    
+                             		sh 'sudo mvn clean install'    
                                }
 
                            }
@@ -20,7 +20,7 @@ pipeline {
                            steps {
                                
                                withMaven(maven : 'MAVEN_3_5') {
-                             		sh 'mvn clean test'    
+                             		sh 'sudo mvn clean test'    
                                }
 
                            }
