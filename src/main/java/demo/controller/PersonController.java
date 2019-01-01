@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import demo.model.Person;
 import demo.repository.PersonRepository;
 
-@CrossOrigin
 @RestController
 public class PersonController {
 	
