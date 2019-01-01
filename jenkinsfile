@@ -27,12 +27,12 @@ pipeline {
 
        	}
        	
-       	stage('Deploy Stage') {
+       	stage('Build Stage') {
                            
                            steps {
                                
                                withMaven(maven : 'MAVEN_3_5') {
-                             		sh 'mvn clean deploy'    
+                             		sh 'mvn docker:build'    
                                }
 
                            }
