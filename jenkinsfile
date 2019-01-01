@@ -32,7 +32,7 @@ pipeline {
                            steps {
                                
                                withMaven(maven : 'MAVEN_3_5') {
-                             		sh 'mvn docker:build'    
+                             		sh 'sudo mvn docker:build'    
                                }
 
                            }
