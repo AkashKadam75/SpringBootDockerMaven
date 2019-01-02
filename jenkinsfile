@@ -73,7 +73,7 @@ pipeline {
 		stage('Deploy to host servers') {
        	
 					      steps{
-					         sh 'ansible-playbook -i /etc/ansible/ playbook.yml'
+					         sh 'sudo ansible-playbook -i /etc/ansible/ playbook.yml'
 					      }
 					      
 		}
