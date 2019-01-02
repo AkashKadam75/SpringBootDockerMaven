@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Creating docker containers
+    shell : docker run -d --name demoboot_container -p 8090:8090 dockerakash/demoboot

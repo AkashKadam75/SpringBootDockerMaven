@@ -47,23 +47,33 @@ pipeline {
                            }
 
        	}
+       	
        	stage('Building docker Image') {
        	
 					      steps{
 					        script {
-					          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+					          dockerImage = docker.build registry
 					        }
 					      }
 					      
 		  }
+		  
        	stage('Deploy docker Image') {
        	
 					      steps{
 					         script {
-					            docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
+					            docker.withRegistry( '', registryCredential ) {
 					            dockerImage.push()
 					          }
 					        }
+					      }
+					      
+		}
+		
+		stage('Deploy to host servers') {
+       	
+					      steps{
+					         sh 'ansible-playbook -i playbook.yml'
 					      }
 					      
 		}
