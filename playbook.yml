@@ -2,5 +2,12 @@
 - hosts: all
   become: true
   tasks:
+  - name: stop previous docker container
+    shell: docker stop demoboot_container
+  - name: remove previous stopped container
+    shell: docker rm -f demoboot_container    
+  - name: remove previous docker images
+    shell: docker rmi -f dockerakash/demoboot
   - name: Creating docker containers
-    shell : docker run -d --name demoboot_container -p 8090:8090 dockerakash/demoboot
+    shell: docker run -d --name demoboot_container -p 8090:8090 dockerakash/emoboot
+     
