@@ -33,9 +33,9 @@ pipeline {
                                
                                withMaven(maven : 'MAVEN_3_5') {
                              		sh 'sudo mvn docker:build' 
-                             		sh	'docker tag demoboot dockerakash/demoboot'
-									sh	'docker push dockerakash/demoboot'
-									sh	'docker rmi demoboot dockerakash/demoboot'    
+                             		sh	'sudo docker tag demoboot dockerakash/demoboot'
+									sh	'sudo docker push dockerakash/demoboot'
+									sh	'sudo docker rmi demoboot dockerakash/demoboot'    
                                }
 
                            }
