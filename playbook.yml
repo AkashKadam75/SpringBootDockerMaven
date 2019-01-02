@@ -9,5 +9,4 @@
   - name: remove previous docker images
     shell: docker rmi -f dockerakash/demoboot
   - name: Creating docker containers
-    shell: docker run -d --name demoboot_container -p 8090:8090 dockerakash/emoboot
-     
+    shell: docker run -d --name demoboot_container -p 8090:8090 dockerakash/demoboot
